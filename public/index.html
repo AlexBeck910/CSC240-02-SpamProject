@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spam Classifier</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+    <script src="./htmx.min.js"></script>
+
+    <h1>Spam Classifier</h1>
+
+    <form>
+        <label>
+            Enter email body:<br />
+            <textarea name="email-text"></textarea>
+        </label>
+        <button hx-post="classify" hx-include="[name='email-text']" hx-target="#result" hx-swap="innerHTML">Submit</button>
+    </form>
+    <div id="result"></div>
+</body>
+</html>
