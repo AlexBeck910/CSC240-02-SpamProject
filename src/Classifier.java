@@ -21,20 +21,16 @@ public class Classifier {
 
                 if(!spamWords.containsKey(s) && !nonSpamWords.containsKey(s)) {
                     if(e.isSpam()) {
-                        System.out.println("Added word "+ s + " from spam email");
                         spamWords.put(s, 1);
                     }
                     else {
-                        System.out.println("Added word "+ s + " from non-spam email");
                         nonSpamWords.put(s, 1);
                     }
                 }
                 else {
                     if(e.isSpam()) {
-                        System.out.println("Updated word "+ s + " in spam email");
                         spamWords.merge(s, freqs.get(s), Integer::sum);
                     } else {
-                        System.out.println("Update word "+ s + " in non-spam email");
                         nonSpamWords.merge(s, freqs.get(s), Integer::sum);
                     }
                 }
