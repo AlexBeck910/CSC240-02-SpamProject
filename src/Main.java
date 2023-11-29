@@ -10,6 +10,8 @@ import java.util.Scanner;
 
 /**
  * @author Alex Beck <ab1008897 @ wcupa.edu>
+ * @author Kaeli Andrews <ka993962 @ wcupa.edu>
+ * @author Mya Bishop <mb994977 @ wcupa.edu>
  */
 public class Main {
     public static void main(String[] args) {
