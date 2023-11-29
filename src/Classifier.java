@@ -65,7 +65,8 @@ public class Classifier {
     public Classification classify(String email) {
         var words = Utils.stripText(email).split(" ");
         var scores = Arrays.stream(words)
-                .mapToDouble(x -> allWords.getOrDefault(x, 0.0))
+                .mapToDouble(x -> allWords.getOrDefault(x, 0.5))
+                .filter(x -> x != 0.0)
                 .toArray();
 
         var score = Arrays.stream(scores).average();
